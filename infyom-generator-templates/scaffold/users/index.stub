@@ -1,0 +1,20 @@
+@extends('layouts.app')
+
+@section('page-title')
+<div class="flex flex-wrap -mx-2 overflow-hidden px-8 lg:px-0 sm:px-0 xl:px-0">
+    <div class="my-2 px-2 overflow-hidden flex">@lang('models/users.plural')</div>
+    <div class="my-2 px-2 flex ml-auto"><a class="justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-600 border border-transparent rounded-md hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-green-700 transition duration-150 ease-in-out" style="margin-top: -10px;margin-bottom: 5px" href="{{ route('users.create') }}">@lang('crud.add_new')</a></div>
+</div>
+@endsection
+
+@section('content')
+    <div id="main">
+        <div class="flex flex-wrap -mx-2 px-8 lg:px-0 sm:px-0 xl:px-0">
+            @include('users.table')
+        </div>
+        <div class="text-center">
+        {{ $users->links('vendor.pagination.default') }}
+        </div>
+    </div>
+@endsection
+

@@ -1,0 +1,18 @@
+@extends('layouts.app')
+
+@section('page-title')
+    @lang('models/users.singular')
+@endsection
+
+@section('content')
+    <div class="main">
+        <div class="flex flex-wrap -mx-2 px-8 lg:px-0 sm:px-0 xl:px-0">
+            @include('users.show_fields')
+            <div class="my-2 px-2 overflow-hidden flex ml-auto">
+                <a href="{{ route('users.index') }}" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700 transition duration-150 ease-in-out">
+                    @lang('crud.back')
+                </a>
+            </div>
+        </div>
+    </div>
+@endsection

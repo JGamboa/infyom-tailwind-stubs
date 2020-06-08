@@ -1,0 +1,15 @@
+@extends('layouts.app')
+
+@section('page-title') Editar @lang('models/users.singular') @endsection
+
+@section('content')
+   <div class="main">
+
+       {!! Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch', 'class' => 'flex flex-wrap -mx-2 overflow-hidden px-8 lg:px-0 sm:px-0 xl:px-0']) !!}
+
+            @include('users.fields')
+
+       {!! Form::close() !!}
+
+   </div>
+@endsection

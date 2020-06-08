@@ -1,0 +1,17 @@
+<!-- Name Field -->
+<div class="my-2 px-2 w-full overflow-hidden sm:w-full md:w-full lg:w-full xl:w-full">
+    {!! Form::label('name', 'Name:') !!}
+    <p>{!! $user->name !!}</p>
+</div>
+
+<!-- Email Field -->
+<div class="my-2 px-2 w-full overflow-hidden sm:w-full md:w-full lg:w-full xl:w-full">
+    {!! Form::label('email', 'Email:') !!}
+    <p>{!! $user->email !!}</p>
+</div>
+
+<!-- Commerce Id -->
+<div class="my-2 px-2 w-full overflow-hidden sm:w-full md:w-full lg:w-full xl:w-full">
+    {!! Form::label('commerce_id', 'Id Comercio:') !!}
+    <p>{!! $user->commerce_id !!}</p>
+</div>

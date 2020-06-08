@@ -1,0 +1,16 @@
+@extends('layouts.app')
+
+@section('page-title') Crear @lang('models/$MODEL_NAME_PLURAL_CAMEL$.singular') @endsection
+
+@section('content')
+    <div class="main">
+        <!--<div class="flex flex-wrap -mx-2 overflow-hidden">-->
+            {!! Form::open(['route' => '$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store', 'class'=> 'flex flex-wrap -mx-2 overflow-hidden px-8 lg:px-0 sm:px-0 xl:px-0']) !!}
+
+                @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+
+            {!! Form::close() !!}
+        <!--</div>-->
+    </div>
+@endsection
+

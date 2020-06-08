@@ -1,0 +1,29 @@
+<!-- Name Field -->
+<div class="my-2 px-2 w-full overflow-hidden sm:w-full md:w-full lg:w-1/2 xl:w-1/2">
+    {!! Form::label('name', 'Name', ['class' => 'text-grey-darker block uppercase tracking-wide text-xs font-bold mt-3 mb-1']) !!}
+    {!! Form::text('name', null, ['class' => 'form-input w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline']) !!}
+</div>
+
+<!-- Email Field -->
+<div class="my-2 px-2 w-full overflow-hidden sm:w-full md:w-full lg:w-1/2 xl:w-1/2">
+    {!! Form::label('email', 'Email', ['class' => 'text-grey-darker block uppercase tracking-wide text-xs font-bold mt-3 mb-1']) !!}
+    {!! Form::email('email', null, ['class' => 'form-input w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline']) !!}
+</div>
+
+<!-- Password Field -->
+<div class="my-2 px-2 w-full overflow-hidden sm:w-full md:w-full lg:w-1/2 xl:w-1/2">
+    {!! Form::label('password', 'Password', ['class' => 'text-grey-darker block uppercase tracking-wide text-xs font-bold mt-3 mb-1']) !!}
+    {!! Form::password('password', ['class' => 'form-input w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline']) !!}
+</div>
+
+<!-- Confirmation Password Field -->
+<div class="my-2 px-2 w-full overflow-hidden sm:w-full md:w-full lg:w-1/2 xl:w-1/2">
+    {!! Form::label('password', 'Password Confirmation', ['class' => 'text-grey-darker block uppercase tracking-wide text-xs font-bold mt-3 mb-1']) !!}
+    {!! Form::password('password_confirmation', ['class' => 'form-input w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline']) !!}
+</div>
+
+<!-- Submit Field -->
+<div class="my-2 px-2 overflow-hidden flex ml-auto">
+    {!! Form::submit(__('crud.save'), ['class' => 'flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-green-600 border border-transparent rounded-md hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green active:bg-green-700 transition duration-150 ease-in-out']) !!}
+    <a href="{!! route('users.index') !!}" class="flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-700 transition duration-150 ease-in-out">@lang('crud.cancel')</a>
+</div>

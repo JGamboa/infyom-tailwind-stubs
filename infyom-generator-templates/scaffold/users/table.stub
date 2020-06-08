@@ -1,0 +1,30 @@
+<div class="overflow-x-auto w-full">
+    <table class="table-auto border-collapse w-full" id="users-table">
+        <thead>
+        <tr>
+            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Nombre</th>
+            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Correo electrónico</th>
+            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Id Commercio</th>
+            <th class="px-6 py-3 border-b border-gray-200 bg-gray-50" colspan="3">@lang('crud.action')</th>
+        </tr>
+        </thead>
+        <tbody class="bg-white">
+        @foreach($users as $user)
+            <tr>
+                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{!! $user->name !!}</td>
+                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{!! $user->email !!}</td>
+                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{!! $user->commerce_id !!}</td>
+                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                    {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
+                    <div class='flex justify-center'>
+                        <a href="{!! route('users.show', [$user->id]) !!}" class="text-blue-400 hover:text-blue-600 underline ml-2"><svg class="h-4 w-4 fill-current text-green-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M.2 10a11 11 0 0 1 19.6 0A11 11 0 0 1 .2 10zm9.8 4a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg></a>
+                        <a href="{!! route('users.edit', [$user->id]) !!}" class="text-blue-400 hover:text-blue-600 underline ml-2"><svg class="h-4 w-4 fill-current text-yellow-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.3 3.7l4 4L4 20H0v-4L12.3 3.7zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z"/></svg></a>
+                        {!! Form::button('<svg class="h-4 w-4 fill-current text-red-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/></svg>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs ml-2', 'onclick' => 'return confirm("'.__('crud.are_you_sure').'")']) !!}
+                    </div>
+                    {!! Form::close() !!}
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+</div>
